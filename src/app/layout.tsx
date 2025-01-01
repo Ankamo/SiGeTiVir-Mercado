@@ -1,46 +1,36 @@
 // src/app/layout.tsx
 
 import React from 'react';
-import '../styles/globals.css';
-import Link from 'next/link';
+import '../styles/globals.css';  // Este archivo es para los estilos globales (como Tailwind)
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Tienda Virtual',
-  description: 'Bienvenido a nuestra tienda virtual en línea.',
+  title: 'SiGeTiVir - Plaza de Mercado',
+  description: 'Tienda virtual y gestión de productos para la Plaza de Mercado.',
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="es">
-      <body>
-        <div className="flex">
-          {/* Sidebar */}
-          <aside className="w-64 bg-gray-800 text-white min-h-screen p-4">
-            <h2 className="text-xl font-bold mb-4">Categorías</h2>
-            <ul>
-              <li>
-                <Link href="/" className="block py-2 px-4 hover:bg-gray-600 rounded">Todas</Link>
-              </li>
-              <li>
-                <Link href="/category/electronica" className="block py-2 px-4 hover:bg-gray-600 rounded">Electrónica</Link>
-              </li>
-              <li>
-                <Link href="/category/ropa" className="block py-2 px-4 hover:bg-gray-600 rounded">Ropa</Link>
-              </li>
-              <li>
-                <Link href="/category/hogar" className="block py-2 px-4 hover:bg-gray-600 rounded">Hogar</Link>
-              </li>
-              <li>
-                <Link href="/category/juguetes" className="block py-2 px-4 hover:bg-gray-600 rounded">Juguetes</Link>
-              </li>
-            </ul>
-          </aside>
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={metadata.description} />
+        <title>{metadata.title}</title>
+      </head>
+      <body className={inter.className}>
+        <header className="bg-blue-600 text-white p-4 text-center">
+          <h1 className="text-3xl font-bold">SiGeTiVir - Plaza de Mercado</h1>
+        </header>
 
-          {/* Main Content */}
-          <main className="flex-1 p-4 bg-gray-100">
-            {children}
-          </main>
-        </div>
+        {/* Contenido principal */}
+        <main>{children}</main>
+
+        <footer className="bg-gray-800 text-white p-4 text-center mt-10">
+          <p>&copy; 2025 SiGeTiVir. Todos los derechos reservados.</p>
+        </footer>
       </body>
     </html>
   );

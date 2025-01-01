@@ -1,32 +1,76 @@
-/* src/styles/globals.css */
+/* src/app/globals.css */
 
-/* Tailwind Base Styles */
+/* Importación de la configuración base de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Definir fuentes globales */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Asegurarse de que el layout ocupe todo el alto de la pantalla */
+html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
 }
 
-h1 {
-  color: #333;
+/* Estilo para eliminar el margen por defecto en el body */
+body {
+  margin: 0;
+  background-color: #f3f4f6; /* Color de fondo suave */
+  color: #333; /* Color de texto oscuro */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Asegurarse de que el main ocupe todo el alto disponible */
+main {
+  min-height: 100vh;
+}
+
+/* Estilos para el carrusel */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  gap: 16px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Estilos de enlace para que se vean mejor */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Configuración de botones comunes */
 button {
-  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
+/* Agregar efecto de hover a los botones */
 button:hover {
-  background-color: #2b6cb0;
+  opacity: 0.9;
 }
 
-aside ul li a:hover {
-  background-color: #4a5568;
+/* Estilos de pie de página */
+footer {
+  background-color: #1f2937; /* Color oscuro */
+  color: #ffffff;
 }
+
+/* Responsive: Asegurar que los botones y el layout se adapten a diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
