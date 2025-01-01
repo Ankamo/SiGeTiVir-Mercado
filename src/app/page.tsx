@@ -1,9 +1,15 @@
-// src/app/page.tsx
 'use client'
 
 import React from 'react';
+import { useRouter } from 'next/navigation';  // Asegúrate de usar useRouter de next/navigation
 
 const HomePage = () => {
+  const router = useRouter();  // Inicializamos el router
+
+  const handleRedirect = () => {
+    router.push('/tienda');  // Redirige a la tienda virtual
+  };
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <header className="text-center">
@@ -23,7 +29,7 @@ const HomePage = () => {
       {/* Botón para ingresar a la tienda */}
       <section className="mt-10">
         <button
-          onClick={() => window.location.href = '/tienda'}
+          onClick={handleRedirect}  // Llamamos a la función para redirigir al hacer clic
           className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-all"
         >
           Ir a la Tienda Virtual
