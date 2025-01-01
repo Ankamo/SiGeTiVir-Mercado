@@ -1,13 +1,11 @@
-// src/app/layout.tsx
-
 import React from 'react';
-import '../styles/globals.css';  // Este archivo es para los estilos globales (como Tailwind)
+import '../styles/globals.css'; 
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Sistema de Gestión de la Tienda Virtual de la Plaza de Mercado',
+  title: 'Tienda Virtual de la Plaza de Mercado',
   description: 'Tienda virtual y gestión de productos para la Plaza de Mercado.',
 };
 
@@ -21,8 +19,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <title>{metadata.title}</title>
       </head>
       <body className={inter.className}>
-        <header className="bg-blue-600 text-white p-4 text-center">
-          <h1 className="text-3xl font-bold">Sistema de Gestión de la Tienda Virtual de la Plaza de Mercado</h1>
+        <header className="bg-blue-900 text-white p-4 text-center">
+          <h1 className="text-3xl font-bold">Sistema de Gestión de la Tienda Virtual</h1>
         </header>
 
         {/* Contenido principal */}

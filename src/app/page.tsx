@@ -1,20 +1,20 @@
 'use client'
 
 import React from 'react';
-import { useRouter } from 'next/navigation';  // Asegúrate de usar useRouter de next/navigation
+import { useRouter } from 'next/navigation';
 
 const HomePage = () => {
-  const router = useRouter();  // Inicializamos el router
+  const router = useRouter();
 
   const handleRedirect = () => {
     router.push('/tienda');  // Redirige a la tienda virtual
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
       <header className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Bienvenido a: <br /> Sistema de Gestión de la Tienda Virtual de la Plaza de Mercado</h1>
-        <p className="mt-4 text-xl text-gray-600">La tienda virtual de la Plaza de Mercado</p>
+        <h1 className="text-4xl font-bold">Bienvenido a la Tienda Virtual</h1>
+        <p className="mt-4 text-xl">La tienda de la Plaza de Mercado</p>
       </header>
 
       {/* Carrusel de imágenes */}
@@ -29,7 +29,7 @@ const HomePage = () => {
       {/* Botón para ingresar a la tienda */}
       <section className="mt-10">
         <button
-          onClick={handleRedirect}  // Llamamos a la función para redirigir al hacer clic
+          onClick={handleRedirect}
           className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-all"
         >
           Ir a la Tienda Virtual

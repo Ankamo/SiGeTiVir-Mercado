@@ -29,24 +29,24 @@ const products = [
 
 const TiendaPage = () => {
   return (
-    <main className="min-h-screen bg-gray-100 p-4">
+    <main className="min-h-screen bg-gray-900 p-4 text-white">
       <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-900">Tienda Virtual</h1>
-        <p className="mt-2 text-xl text-gray-600">Compra productos de la Plaza de Mercado</p>
+        <h1 className="text-4xl font-bold">Tienda Virtual</h1>
+        <p className="mt-2 text-xl">Compra productos de la Plaza de Mercado</p>
       </header>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
-          <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div key={product.id} className="bg-gray-800 shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform">
             <img
               src={product.image}
               alt={product.name}
               className="w-full h-64 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-semibold text-gray-900">{product.name}</h2>
-              <p className="mt-2 text-gray-600">{product.description}</p>
-              <p className="mt-4 text-lg font-bold text-gray-900">${product.price}</p>
+              <h2 className="text-xl font-semibold text-blue-400">{product.name}</h2>
+              <p className="mt-2 text-gray-300">{product.description}</p>
+              <p className="mt-4 text-lg font-bold">{product.price} USD</p>
               <button
                 className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all"
               >
