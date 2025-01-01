@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <header className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Bienvenido a SiGeTiVir</h1>
+        <h1 className="text-4xl font-bold text-gray-900">Bienvenido a: <br /> Sistema de Gestión de la Tienda Virtual de la Plaza de Mercado</h1>
         <p className="mt-4 text-xl text-gray-600">La tienda virtual de la Plaza de Mercado</p>
       </header>
 
