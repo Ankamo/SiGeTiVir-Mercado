@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/globals.css'; 
+import Header from '../components/header/page';  // Importamos el componente Header
+import Footer from '../components/footer/page';  // Importamos el componente Footer
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,16 +21,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <title>{metadata.title}</title>
       </head>
       <body className={inter.className}>
-        <header className="bg-blue-900 text-white p-4 text-center">
-          <h1 className="text-3xl font-bold">Sistema de Gestión de la Tienda Virtual</h1>
-        </header>
+      <Header />  {/* Usamos el componente Header */}
+
 
         {/* Contenido principal */}
         <main>{children}</main>
 
-        <footer className="bg-gray-800 text-white p-4 text-center mt-10">
-          <p>&copy; 2025 SiGeTiVir. Todos los derechos reservados.</p>
-        </footer>
+        <Footer />  {/* Usamos el componente Footer */}
+
       </body>
     </html>
   );
