@@ -20,9 +20,9 @@ const HomePage = () => {
       {/* Carrusel de imágenes */}
       <section className="mt-10 w-full max-w-4xl mx-auto">
         <div className="carousel">
-          <img src="/carrusel/images.jpeg" alt="Plaza de Mercado" className="w-full h-auto rounded-lg" />
-          <img src="/carrusel/images(1).jpeg" alt="Plaza de Mercado" className="w-full h-auto rounded-lg" />
-          <img src="/carrusel/images(2).jpeg" alt="Plaza de Mercado" className="w-full h-auto rounded-lg" />
+          <img src="/carrusel/1.jpeg" alt="Plaza de Mercado" className="w-full h-auto rounded-lg" />
+          <img src="/carrusel/2.jpeg" alt="Plaza de Mercado" className="w-full h-auto rounded-lg" />
+          <img src="/carrusel/3.jpeg" alt="Plaza de Mercado" className="w-full h-auto rounded-lg" />
         </div>
       </section>
 
