@@ -1,33 +1,48 @@
-'use client'
+'use client';
 
-import React from 'react';
-
-const products = [
-  {
-    id: 1,
-    name: 'Producto 1',
-    description: 'Descripción del producto 1.',
-    price: 100,
-    image: '/images/producto-1.jpg',
-  },
-  {
-    id: 2,
-    name: 'Producto 2',
-    description: 'Descripción del producto 2.',
-    price: 200,
-    image: '/images/producto-2.jpg',
-  },
-  {
-    id: 3,
-    name: 'Producto 3',
-    description: 'Descripción del producto 3.',
-    price: 300,
-    image: '/images/producto-3.jpg',
-  },
-  // Agrega más productos aquí...
-];
+import React, { useEffect, useState } from 'react';
 
 const TiendaPage = () => {
+  const [products, setProducts] = useState([]); // Estado para los productos
+  const [loading, setLoading] = useState(true); // Estado de carga
+
+  // Función para obtener datos de Google Sheets
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('/api/products'); // Ruta de tu API que conecta con Google Sheets
+      const data = await response.json();
+      setProducts(data);
+      setLoading(false); // Termina la carga
+    } catch (error) {
+      console.error('Error al cargar los productos:', error);
+      setLoading(false);
+    }
+  };
+
+  // Cargar los productos al montar el componente
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  // Mostrar un mensaje de carga mientras se obtienen los datos
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-gray-900 p-4 text-white flex items-center justify-center">
+        <p className="text-xl font-semibold">Cargando productos...</p>
+      </main>
+    );
+  }
+
+  // Si no hay productos disponibles
+  if (!products.length) {
+    return (
+      <main className="min-h-screen bg-gray-900 p-4 text-white flex items-center justify-center">
+        <p className="text-xl font-semibold">No hay productos disponibles en este momento.</p>
+      </main>
+    );
+  }
+
+  // Mostrar los productos
   return (
     <main className="min-h-screen bg-gray-900 p-4 text-white">
       <header className="text-center mb-8">
@@ -37,14 +52,19 @@ const TiendaPage = () => {
 
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
-          <div key={product.id} className="bg-gray-800 shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform">
+          <div
+            key={product.id}
+            className="bg-gray-800 shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform"
+          >
             <img
               src={product.image}
               alt={product.name}
               className="w-full h-64 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-semibold text-blue-400">{product.name}</h2>
+              <h2 className="text-xl font-semibold text-blue-400">
+                {product.name}
+              </h2>
               <p className="mt-2 text-gray-300">{product.description}</p>
               <p className="mt-4 text-lg font-bold">{product.price} USD</p>
               <button
