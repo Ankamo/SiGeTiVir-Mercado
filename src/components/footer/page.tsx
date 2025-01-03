@@ -40,10 +40,10 @@ const Footer = () => {
             <li>
               Email:{" "}
               <a
-                href="mailto:contacto@tiendaplaza.com"
+                href="mailto:serregionales@girardot-cundinamarca.gov.co"
                 className="hover:text-blue-300"
               >
-                <br />serregionales@girardot-cundinamarca.gov.co
+                serregionales@girardot-cundinamarca.gov.co
               </a>
             </li>
             <li>
@@ -59,7 +59,7 @@ const Footer = () => {
         {/* Sección Derecha: Redes Sociales */}
         <div className="flex flex-col items-center">
           <h4 className="font-bold text-lg mb-4">Síguenos</h4>
-          <ul className="flex justify-center space-x-4">
+          <ul className="space-y-2">
             <li>
               <a
                 href="https://facebook.com/tiendaplaza"
@@ -116,7 +116,7 @@ const Footer = () => {
           </a>
         </p>
         <p>&copy; {new Date().getFullYear()} Ser Regionales. Todos los derechos reservados.</p>
-        </div>
+      </div>
     </footer>
   );
 };

@@ -14,6 +14,7 @@ body {
 html, body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden; /* Evitar desplazamiento horizontal */
 }
 
 /* Estilo para eliminar el margen por defecto en el body */
@@ -28,19 +29,8 @@ body {
 /* Asegurarse de que el main ocupe todo el alto disponible */
 main {
   min-height: 100vh;
-}
-
-/* Estilos para el carrusel */
-.carousel {
   display: flex;
-  overflow: hidden;
-  gap: 16px;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel img {
-  width: 100%;
-  border-radius: 8px;
+  flex-direction: column;
 }
 
 /* Estilos de enlace para que se vean mejor */
@@ -71,5 +61,71 @@ footer {
   .carousel {
     flex-direction: column;
     gap: 12px;
+  }
+}
+
+/* Estilo base del tema navideño */
+.christmas-body {
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+  height: 100vh; /* Asegúrate de que solo ocupe el 100% de la altura de la ventana */
+}
+
+
+/* Animación de copos de nieve */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 1.5em;
+  animation: fall 10s linear infinite;
+  user-select: none;
+}
+
+/* Genera múltiples copos con posiciones iniciales y demoras aleatorias */
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  font-size: 1.2em;
+}
+.snowflake:nth-child(2) {
+  left: 20%;
+  animation-delay: 2s;
+  font-size: 1.5em;
+}
+.snowflake:nth-child(3) {
+  left: 30%;
+  animation-delay: 4s;
+  font-size: 1.8em;
+}
+.snowflake:nth-child(4) {
+  left: 50%;
+  animation-delay: 1s;
+  font-size: 1.3em;
+}
+.snowflake:nth-child(5) {
+  left: 70%;
+  animation-delay: 3s;
+  font-size: 1.6em;
+}
+.snowflake:nth-child(6) {
+  left: 90%;
+  animation-delay: 5s;
+  font-size: 1.4em;
+}
+
+/* Animación de caída */
+@keyframes fall {
+  0% {
+    top: -10px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    top: 100vh;
+    transform: translateX(-20px);
   }
 }
