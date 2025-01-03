@@ -24,23 +24,6 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Newsletter */}
-        <div>
-          <h4 className="font-bold text-lg mb-2">Suscríbete a nuestro boletín</h4>
-          <form action="#" method="POST" className="flex flex-col items-center">
-            <input
-              type="email"
-              name="email"
-              placeholder="Ingresa tu correo electrónico"
-              className="p-2 mb-2 rounded-lg text-black"
-              required
-            />
-            <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
-              Suscribirse
-            </button>
-          </form>
-        </div>
-
         {/* Botón para ingresar a la tienda */}
         <section className="mt-10">
           <button
